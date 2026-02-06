@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outcome LLC | David E. Jones | Manufacturing Turnaround</title>
+<meta name="description" content="I find the ideal condition. I map the gap. I close it. Toyota-trained manufacturing turnaround. Results in weeks, not years.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0c1a2e;
+    --navy-light: #132640;
+    --navy-mid: #1a3358;
+    --blue: #2563a0;
+    --blue-light: #3b82c4;
+    --orange: #e87a2e;
+    --orange-dark: #c96820;
+    --gold: #d4a843;
+    --gold-light: #e8c36a;
+    --white: #f5f5f5;
+    --gray: #8a919a;
+    --gray-light: #b0b7c0;
+    --gray-dark: #3d4654;
+    --border: #263550;
+
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-heading: 'Oswald', sans-serif;
+    --font-condensed: 'Barlow Condensed', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  ::selection {
+    background: var(--orange);
+    color: var(--white);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(12, 26, 46, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--orange); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--orange); }
+
+  .nav-phone {
+    color: var(--orange);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+
+  .nav-phone:hover { color: var(--gold); }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    margin: 5px 0;
+    transition: all 0.3s;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    right: -15%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(232, 122, 46, 0.05) 0%, rgba(37, 99, 160, 0.03) 40%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--orange), var(--blue), transparent);
+  }
+
+  .hero-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--orange);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    max-width: 900px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.15s forwards;
+  }
+
+  .hero h1 .line-orange {
+    color: var(--orange);
+    display: block;
+  }
+
+  .hero h1 .line-gold {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-sub {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 2.5rem;
+    max-width: 540px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.3s forwards;
+  }
+
+  .hero-sub strong { color: var(--white); }
+
+  .hero-cta {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.45s forwards;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border: 2px solid var(--orange);
+  }
+
+  .btn-primary:hover {
+    background: var(--orange-dark);
+    border-color: var(--orange-dark);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border: 2px solid var(--border);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ===== TICKER ===== */
+  .results-banner {
+    padding: 1.5rem 2rem;
+    background: var(--navy-light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .results-ticker {
+    display: flex;
+    gap: 4rem;
+    animation: ticker 30s linear infinite;
+    width: max-content;
+  }
+
+  .ticker-item {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .ticker-item .num { color: var(--orange); }
+  .ticker-item .sep { color: var(--border); font-size: 0.6rem; }
+
+  /* ===== SHARED ===== */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--orange);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .section-tag {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+    color: var(--border);
+  }
+
+  /* ===== RESULTS ===== */
+  .results {
+    padding: 6rem 2rem;
+    background: var(--navy-light);
+    position: relative;
+  }
+
+  .results h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.02em;
+    margin-bottom: 4rem;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+  }
+
+  .result-card {
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: all 0.4s;
+  }
+
+  .result-card:hover {
+    background: rgba(232, 122, 46, 0.04);
+    border-color: rgba(232, 122, 46, 0.3);
+  }
+
+  .result-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .result-metric {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--gray);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .result-detail {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  .result-time {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--gray);
+    margin-top: 0.75rem;
+  }
+
+  /* ===== METHOD ===== */
+  .method {
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .method h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.02em;
+    margin-bottom: 4rem;
+  }
+
+  .method-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0;
+  }
+
+  .method-step {
+    padding: 3rem 2rem;
+    border-left: 1px solid var(--border);
+    position: relative;
+    transition: all 0.4s;
+  }
+
+  .method-step:first-child { border-left: 1px solid var(--orange); }
+  .method-step:hover { background: var(--navy-light); }
+
+  .step-number {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    transition: color 0.4s;
+  }
+
+  .method-step:hover .step-number { color: var(--orange); }
+
+  .method-step h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .method-step p {
+    color: var(--gray);
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+
+  /* ===== QUOTE ===== */
+  .quote-break {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+    text-align: center;
+    position: relative;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .quote-break blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    letter-spacing: 0.03em;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--gray-light);
+  }
+
+  .quote-break blockquote span { color: var(--orange); }
+
+  /* ===== PHILOSOPHY ===== */
+  .philosophy {
+    padding: 6rem 2rem;
+    background: var(--navy-light);
+    position: relative;
+  }
+
+  .philosophy h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.02em;
+    margin-bottom: 4rem;
+  }
+
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 900px;
+  }
+
+  .phil-block {
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--border);
+    transition: border-color 0.3s;
+  }
+
+  .phil-block:hover { border-color: var(--gold); }
+
+  .phil-block h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    color: var(--gold);
+  }
+
+  .phil-block p {
+    font-size: 0.8rem;
+    color: var(--gray);
+    line-height: 1.8;
+  }
+
+  /* ===== WHO ===== */
+  .who {
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .who h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.02em;
+    margin-bottom: 4rem;
+  }
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .who-col {
+    padding: 3rem;
+    border: 1px solid var(--border);
+  }
+
+  .who-col.yes { border-left: 3px solid var(--orange); }
+  .who-col.no { border-left: 3px solid var(--gray-dark); }
+
+  .who-col h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+  }
+
+  .who-col.yes h3 { color: var(--orange); }
+  .who-col.no h3 { color: var(--gray); }
+
+  .who-item {
+    font-size: 0.8rem;
+    color: var(--gray-light);
+    line-height: 1.7;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .who-item:last-child { border-bottom: none; }
+
+  .who-col.yes .who-item::before {
+    content: '→ ';
+    color: var(--orange);
+    font-weight: 700;
+  }
+
+  .who-col.no .who-item::before {
+    content: '✕ ';
+    color: var(--gray-dark);
+    font-weight: 700;
+  }
+
+  /* ===== ABOUT ===== */
+  .about {
+    padding: 6rem 2rem;
+    background: var(--navy-light);
+    position: relative;
+  }
+
+  .about h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.02em;
+    margin-bottom: 4rem;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+  }
+
+  .about-text p {
+    font-size: 0.85rem;
+    color: var(--gray-light);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text strong { color: var(--white); }
+
+  .career-list { list-style: none; }
+
+  .career-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .career-item:last-child { border-bottom: none; }
+
+  .career-company {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white);
+  }
+
+  .career-role {
+    font-size: 0.7rem;
+    color: var(--gray);
+    text-align: right;
+    max-width: 60%;
+  }
+
+  /* ===== DEAL ===== */
+  .deal {
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .deal h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.02em;
+    margin-bottom: 4rem;
+  }
+
+  .deal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+  }
+
+  .deal-item {
+    padding: 2rem;
+    background: var(--navy-light);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .deal-item:hover { border-color: var(--gold); }
+
+  .deal-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .deal-item p {
+    font-size: 0.8rem;
+    color: var(--gray);
+    line-height: 1.8;
+  }
+
+  /* ===== INDUSTRIES ===== */
+  .industries {
+    padding: 6rem 2rem;
+    background: var(--navy-light);
+    position: relative;
+  }
+
+  .industries h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.02em;
+    margin-bottom: 4rem;
+  }
+
+  .industries-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .industry-tag {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--gray-light);
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+  }
+
+  .industry-tag:hover {
+    border-color: var(--blue-light);
+    color: var(--white);
+    background: rgba(37, 99, 160, 0.1);
+  }
+
+  /* ===== CONTACT ===== */
+  .contact {
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .contact h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .contact-sub {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-bottom: 3rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 700px;
+  }
+
+  .contact-item {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .contact-item:hover { border-color: var(--orange); }
+
+  .contact-item .label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--gray);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-item a {
+    color: var(--orange);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+
+  .contact-item a:hover { color: var(--gold); }
+
+  .contact-item .info {
+    color: var(--white);
+    font-size: 0.9rem;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--gray);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-right {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--gray);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-right a {
+    color: var(--orange);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-right a:hover { color: var(--gold); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      gap: 1rem;
+    }
+
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .hero h1 { font-size: clamp(2.8rem, 12vw, 5rem); }
+
+    .results, .method, .philosophy, .who, .about, .deal, .industries, .contact {
+      padding: 4rem 1.5rem;
+    }
+
+    .philosophy-grid, .who-grid, .about-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .method-steps { grid-template-columns: 1fr; }
+
+    .method-step {
+      border-left: 1px solid var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    .method-step:first-child { border-left: 1px solid var(--orange); }
+    .results-grid { grid-template-columns: 1fr 1fr; }
+    .hero-cta { flex-direction: column; align-items: flex-start; }
+    .section-tag { display: none; }
+
+    .career-item {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .career-role {
+      text-align: left;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .results-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">OUTCOME<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#results">Results</a></li>
+    <li><a href="#method">Method</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:6156891205" class="nav-phone">(615) 689-1205</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Toyota-trained. Floor-proven. Results-measured.</div>
+  <h1>
+    I FIND THE<br>IDEAL CONDITION.
+    <span class="line-orange">I MAP THE GAP.</span>
+    <span class="line-gold">I CLOSE IT.</span>
+  </h1>
+  <p class="hero-sub">
+    <strong>30 years. Toyota City, Japan.</strong> Not from a book — from the people who invented it. No 200-slide decks. No consultants in suits who've never touched a machine. I walk your floor. I find what's broken. I fix it.
+  </p>
+  <div class="hero-cta">
+    <a href="tel:6156891205" class="btn-primary">Let's Talk</a>
+    <a href="#results" class="btn-secondary">See Results</a>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="results-banner">
+  <div class="results-ticker">
+    <div class="ticker-item"><span class="num">4% → 93%</span> OEE <span class="sep">◆</span></div>
+    <div class="ticker-item"><span class="num">2% → 98%</span> FTQ <span class="sep">◆</span></div>
+    <div class="ticker-item"><span class="num">$100M</span> ANNUAL SAVINGS <span class="sep">◆</span></div>
+    <div class="ticker-item"><span class="num">7X</span> OUTPUT PER PERSON <span class="sep">◆</span></div>
+    <div class="ticker-item"><span class="num">2% → 98%</span> FTQ <span class="sep">◆</span></div>
+    <div class="ticker-item"><span class="num">$100M</span> ANNUAL SAVINGS <span class="sep">◆</span></div>
+    <div class="ticker-item"><span class="num">7X</span> OUTPUT PER PERSON <span class="sep">◆</span></div>
+    <div class="ticker-item"><span class="num">3 WEEKS</span> TO BREAK-EVEN <span class="sep">◆</span></div>
+    <div class="ticker-item"><span class="num">4% → 93%</span> OEE <span class="sep">◆</span></div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <span class="section-tag">RESULTS</span>
+  <div class="section-label">// Audited results. Not projections.</div>
+  <h2>THE NUMBERS DON'T LIE</h2>
+  <div class="results-grid">
+    <div class="result-card">
+      <div class="result-number">4% → 93%</div>
+      <div class="result-metric">Overall Equipment Effectiveness</div>
+      <div class="result-detail">Tubular Steel USA. Dead plant. Everyone said it couldn't be saved.</div>
+      <div class="result-time">15 months</div>
+    </div>
+    <div class="result-card">
+      <div class="result-number">2% → 98%</div>
+      <div class="result-metric">First Time Quality</div>
+      <div class="result-detail">Magna Steyr Japan. Failing operation turned most profitable global unit.</div>
+      <div class="result-time">3 weeks</div>
+    </div>
+    <div class="result-card">
+      <div class="result-number">$100M</div>
+      <div class="result-metric">Annual Cost Reduction</div>
+      <div class="result-detail">Nissan North America. 6M sq ft, 6 vehicle models, 400 AGVs.</div>
+      <div class="result-time">Sustained annually</div>
+    </div>
+    <div class="result-card">
+      <div class="result-number">7X</div>
+      <div class="result-metric">Output Per Person</div>
+      <div class="result-detail">Gantri. World's largest connected 3D print farm. 5 to 35 units per person per day.</div>
+      <div class="result-time">6 months</div>
+    </div>
+    <div class="result-card">
+      <div class="result-number">BREAK-EVEN</div>
+      <div class="result-metric">Restored</div>
+      <div class="result-detail">Bluegrass Living. Bleeding money. Stopped the bleeding.</div>
+      <div class="result-time">3 weeks</div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="method" id="method">
+  <span class="section-tag">METHOD</span>
+  <div class="section-label">// How it works</div>
+  <h2>NO MYSTERY. JUST METHOD.</h2>
+  <div class="method-steps">
+    <div class="method-step">
+      <div class="step-number">01</div>
+      <h3>I Walk Your Floor</h3>
+      <p>Not your conference room. Your floor. Where the work happens. Watching. Measuring. Asking "why" until I find root cause. Week 1.</p>
+    </div>
+    <div class="method-step">
+      <div class="step-number">02</div>
+      <h3>I Find the Gap</h3>
+      <p>Between where you are and where you should be. Not feelings. Not opinions. OEE. FTQ. Takt time. Throughput. Measured. Documented.</p>
+    </div>
+    <div class="method-step">
+      <div class="step-number">03</div>
+      <h3>I Close It</h3>
+      <p>With your team. On your floor. Teaching them to see what I see. Building systems that stick. Weeks 2–10.</p>
+    </div>
+    <div class="method-step">
+      <div class="step-number">04</div>
+      <h3>I Leave</h3>
+      <p>And it keeps working. Because your people own it now. This isn't magic. It's method. They'll carry it forward without me.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-break">
+  <blockquote>
+    "McKinsey sends you <span>12 MBAs</span> who've never run a machine. I send you <span>me</span>. And I've run the machines."
+  </blockquote>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <span class="section-tag">PHILOSOPHY</span>
+  <div class="section-label">// Learned in Toyota City, Japan. Not from a book.</div>
+  <h2>WHAT I BELIEVE</h2>
+  <div class="philosophy-grid">
+    <div class="phil-block">
+      <h3>Ideal Condition Exists</h3>
+      <p>Every process has one. Most companies have never defined it. I learned this from the people who invented the Toyota Production System — on the floor at Tsutsumi, Motomachi, Tahara, and Kyushu.</p>
+    </div>
+    <div class="phil-block">
+      <h3>The Gap Is Measurable</h3>
+      <p>Not feelings. Not opinions. Data. OEE. FTQ. Takt time. Throughput. If you can't measure it, you can't close it.</p>
+    </div>
+    <div class="phil-block">
+      <h3>Closing It Is Work</h3>
+      <p>Real work. On the floor. With your people. Not in conference rooms. Not on Zoom. Not "advising." Doing.</p>
+    </div>
+    <div class="phil-block">
+      <h3>Your People Own It</h3>
+      <p>I teach your team to see. When I leave, the system stays. That's the difference between a consultant and a sensei.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO FOR -->
+<section class="who">
+  <span class="section-tag">FIT</span>
+  <div class="section-label">// Honest about who I work with</div>
+  <h2>IS THIS FOR YOU?</h2>
+  <div class="who-grid">
+    <div class="who-col yes">
+      <h3>This Is for You</h3>
+      <div class="who-item">You're bleeding money on your production floor and you don't know why</div>
+      <div class="who-item">You bought automation that was supposed to fix everything. It didn't.</div>
+      <div class="who-item">You're cutting headcount but output is dropping faster than labor costs</div>
+      <div class="who-item">Your "lean program" produced posters, not results</div>
+      <div class="who-item">You need someone who's done this before. Fast. No ramp-up time.</div>
+    </div>
+    <div class="who-col no">
+      <h3>This Isn't for You</h3>
+      <div class="who-item">You want a consultant who tells you what you want to hear</div>
+      <div class="who-item">You want more reports, not more output</div>
+      <div class="who-item">You're not willing to change how work gets done</div>
+      <div class="who-item">You think manufacturing excellence is a slogan</div>
+      <div class="who-item">We won't work well together. And that's fine.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <span class="section-tag">ABOUT</span>
+  <div class="section-label">// 30 years making factories work</div>
+  <h2>WHO I AM</h2>
+  <div class="about-content">
+    <div class="about-text">
+      <p>Trained in <strong>Toyota City, Japan</strong>. 11 years learning the real production system from the people who built it. Not from books. Not from seminars. From the floor.</p>
+      <p><strong>Business-level Japanese.</strong> 17 years living in Japan. Permanent resident. I bridge the gap between Western manufacturing and the culture that created TPS.</p>
+      <p>I've been a machinist, a supervisor, a plant manager, a VP. I don't advise from conference rooms. I'm on the floor until it's fixed.</p>
+      <p>Based in <strong>Nashville, Tennessee.</strong> Will travel anywhere the work is.</p>
+    </div>
+    <ul class="career-list">
+      <li class="career-item">
+        <span class="career-company">Toyota</span>
+        <span class="career-role">Vehicle production engineering. 4 plants. 11 years in Japan.</span>
+      </li>
+      <li class="career-item">
+        <span class="career-company">Nissan</span>
+        <span class="career-role">6M sq ft. 6 models. 400 AGVs. $100M savings.</span>
+      </li>
+      <li class="career-item">
+        <span class="career-company">Magna Steyr</span>
+        <span class="career-role">Turned failing Japan unit into most profitable globally.</span>
+      </li>
+      <li class="career-item">
+        <span class="career-company">Canoo</span>
+        <span class="career-role">Scaled EV battery production. Prototype → 1,000+ units.</span>
+      </li>
+      <li class="career-item">
+        <span class="career-company">Gantri</span>
+        <span class="career-role">World's largest 3D print farm. 5 → 35 units per person per day.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- DEAL -->
+<section class="deal">
+  <span class="section-tag">ENGAGEMENT</span>
+  <div class="section-label">// The deal</div>
+  <h2>HOW WE WORK TOGETHER</h2>
+  <div class="deal-grid">
+    <div class="deal-item">
+      <h3>90 Days</h3>
+      <p>That's the engagement. Proof of concept. Measurable results. Then we decide together what comes next.</p>
+    </div>
+    <div class="deal-item">
+      <h3>Measurable Targets</h3>
+      <p>Agreed upfront. OEE, FTQ, throughput, cost per unit. Not vibes. Numbers.</p>
+    </div>
+    <div class="deal-item">
+      <h3>On Your Floor</h3>
+      <p>Not on Zoom. Not "advising." Doing. With your people. Where the work happens.</p>
+    </div>
+    <div class="deal-item">
+      <h3>Your Team Learns</h3>
+      <p>This isn't magic. It's method. They'll own it when I leave. That's the whole point.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries">
+  <span class="section-tag">INDUSTRIES</span>
+  <div class="section-label">// The method doesn't change. The results don't lie.</div>
+  <h2>WHERE I'VE DONE IT</h2>
+  <div class="industries-list">
+    <div class="industry-tag">Automotive OEM</div>
+    <div class="industry-tag">EV Battery Production</div>
+    <div class="industry-tag">Tier 1 Suppliers</div>
+    <div class="industry-tag">Tier 2 & 3 Suppliers</div>
+    <div class="industry-tag">Precision Machine Shops</div>
+    <div class="industry-tag">Digital Manufacturing</div>
+    <div class="industry-tag">Consumer Products</div>
+    <div class="industry-tag">Building Products</div>
+    <div class="industry-tag">Steel & Metals</div>
+    <div class="industry-tag">Supplier Development</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <span class="section-tag">CONTACT</span>
+  <div class="section-label">// No gatekeepers. No sales team. Just me.</div>
+  <h2>LET'S TALK</h2>
+  <p class="contact-sub">No forms. No intake process. Just call.</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="label">Phone</div>
+      <a href="tel:6156891205">(615) 689-1205</a>
+    </div>
+    <div class="contact-item">
+      <div class="label">Email</div>
+      <a href="mailto:dj@outcometn.com">dj@outcometn.com</a>
+    </div>
+    <div class="contact-item">
+      <div class="label">Location</div>
+      <div class="info">Nashville, Tennessee</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">© 2026 OUTCOME LLC. ALL RIGHTS RESERVED.</div>
+  <div class="footer-right">
+    <a href="https://www.linkedin.com/in/jones-e-david/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => links.classList.remove('active')));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.result-card, .method-step, .phil-block, .deal-item, .who-item, .career-item, .contact-item, .industry-tag').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
