@@ -1294,7 +1294,7 @@
       </div>
       <div class="photo-card" onclick="openLightbox(this)">
         <img src="img/senator-hagerty.jpg" alt="US Senator Bill Hagerty examining steel tube product during facility visit">
-        <div class="photo-caption"><strong>Senator Bill Hagerty visits.</strong> Showing him the product. When a U.S. Senator tours your plant, you're doing something right.</div>
+        <div class="photo-caption"><strong>U.S. Senator Bill Hagerty visits.</strong> His office chose us for a Go and See workforce visit. The link: he served as U.S. Ambassador to Japan, I spent 11 years at Toyota in Japan. His team thought that connection was worth seeing firsthand.</div>
       </div>
     </div>
   </div>
@@ -1396,7 +1396,6 @@
       <div class="who-item">You want more reports, not more output</div>
       <div class="who-item">You're not willing to change how work gets done</div>
       <div class="who-item">You think manufacturing excellence is a slogan</div>
-      <div class="who-item">We won't work well together. And that's fine.</div>
     </div>
   </div>
 </section>
@@ -1541,7 +1540,7 @@
     </div>
     <div class="contact-item">
       <div class="label">Email</div>
-      <a href="mailto:dj@outcometn.com">dj@outcometn.com</a>
+      <a href="/cdn-cgi/l/email-protection#74101e341b0100171b1911001a5a171b19"><span class="__cf_email__" data-cfemail="cfaba58fa0babbaca0a2aabba1e1aca0a2">[email&#160;protected]</span></a>
     </div>
     <div class="contact-item">
       <div class="label">Location</div>
@@ -1558,7 +1557,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Decode contact info (anti-scraper)
   (function() {
     var p = ['\x36','\x31','\x35','\x36','\x38','\x39','\x31','\x32','\x30','\x35'];
@@ -1595,10 +1594,4 @@
   function openLightbox(card) {
     const img = card.querySelector('img');
     if (!img) return;
-    let lb = document.getElementById('lightbox');
-    if (!lb) {
-      lb = document.createElement('div');
-      lb.id = 'lightbox';
-      lb.className = 'lightbox';
-      lb.innerHTML = '<button class="lightbox-close">&times;</button><img>';
-      lb.addEventListener(
+    let lb = document.getElement
