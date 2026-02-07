@@ -1290,7 +1290,7 @@
       </div>
       <div class="photo-card" onclick="openLightbox(this)">
         <img src="img/tubular-team.jpg" alt="David Jones with Tubular Steel team members on the factory floor">
-        <div class="photo-caption"><strong>The team I built.</strong> Royce (green, quality manager I hired). Chase (yellow, maintenance manager — came in as a TCAT student in 2016, now runs maintenance).</div>
+        <div class="photo-caption"><strong>The team I built.</strong> Daniel (green, visiting customer — Toyota Boshoku Seating). Royce (yellow, quality manager I hired). Chase (orange, maintenance manager — came in as a TCAT student in 2016, now runs maintenance).</div>
       </div>
       <div class="photo-card" onclick="openLightbox(this)">
         <img src="img/senator-hagerty.jpg" alt="US Senator Bill Hagerty examining steel tube product during facility visit">
@@ -1299,17 +1299,17 @@
     </div>
   </div>
 
-  <!-- Toyota Japan -->
+  <!-- Magna Steyr Japan -->
   <div class="case-study">
     <div class="case-header">
-      <h3>Toyota Motor Corporation — Japan</h3>
-      <span class="case-result">11 years. 4 plants. The source.</span>
+      <h3>Magna Steyr Japan</h3>
+      <span class="case-result">2% → 98% First Time Quality in 3 weeks</span>
     </div>
-    <p class="case-desc">Vehicle production engineering across Tsutsumi, Motomachi, Tahara, and Kyushu plants. This is where I learned the system — not from a book, not from a seminar, from the people who built it.</p>
+    <p class="case-desc">Turned Magna's failing Japan operation into their most profitable global unit. Applied the real Toyota Production System — not the textbook version — to transform quality and throughput.</p>
     <div class="photo-grid" style="grid-template-columns: 1fr;">
       <div class="photo-card" onclick="openLightbox(this)">
-        <img src="img/toyota-human-machine.jpg" alt="Toyota human-machine chart with colored magnets showing work element allocation in Japanese" style="height: 300px;">
-        <div class="photo-caption"><strong>人機能配置表 — Human-machine allocation chart.</strong> Color-coded work elements mapping human and machine cycle time. All in Japanese. This is how Toyota actually designs production lines. I read it, I write it, I teach it.</div>
+        <img src="img/toyota-human-machine.jpg" alt="Yamazumi board with colored magnets showing work element allocation in Japanese" style="height: 300px;">
+        <div class="photo-caption"><strong>山積み表 — Yamazumi board.</strong> Color-coded work elements mapping human and machine cycle time. All in Japanese. This is how Toyota actually designs production lines. I read it, I write it, I teach it.</div>
       </div>
     </div>
   </div>
@@ -1541,7 +1541,7 @@
     </div>
     <div class="contact-item">
       <div class="label">Email</div>
-      <a href="mailto:dj@outcometn.com">dj@outcometn.com</a>
+      <a href="/cdn-cgi/l/email-protection#17737d5778626374787a7263793974787a"><span class="__cf_email__" data-cfemail="6e0a042e011b1a0d01030b1a00400d0103">[email&#160;protected]</span></a>
     </div>
     <div class="contact-item">
       <div class="label">Location</div>
@@ -1558,7 +1558,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('active'));
@@ -1590,13 +1590,4 @@
       lb.id = 'lightbox';
       lb.className = 'lightbox';
       lb.innerHTML = '<button class="lightbox-close">&times;</button><img>';
-      lb.addEventListener('click', () => lb.classList.remove('active'));
-      document.body.appendChild(lb);
-    }
-    lb.querySelector('img').src = img.src;
-    lb.querySelector('img').alt = img.alt;
-    lb.classList.add('active');
-  }
-</script>
-</body>
-</html>
+      lb.addEventListener(
