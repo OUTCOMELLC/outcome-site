@@ -845,6 +845,301 @@
   @media (max-width: 480px) {
     .results-grid { grid-template-columns: 1fr; }
   }
+  /* ===== PORTFOLIO ===== */
+  .portfolio {
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .portfolio h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
+    margin-bottom: 3rem;
+  }
+
+  .case-study {
+    margin-bottom: 4rem;
+    border: 1px solid var(--border);
+    background: var(--navy-light);
+    padding: 2rem;
+    position: relative;
+  }
+
+  .case-study::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--orange);
+  }
+
+  .case-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .case-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--orange);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .case-header .case-result {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  .case-desc {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    max-width: 700px;
+  }
+
+  .photo-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .photo-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--navy);
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+
+  .photo-card:hover {
+    border-color: var(--orange);
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+  }
+
+  .photo-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .photo-caption {
+    padding: 0.75rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--gray-light);
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+    border-top: 1px solid var(--border);
+  }
+
+  .photo-caption strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .before-after-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .before-after-pair .photo-card img {
+    height: 240px;
+  }
+
+  .ba-label {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-family: var(--font-condensed);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    z-index: 2;
+  }
+
+  .ba-label.before {
+    background: rgba(220, 50, 50, 0.9);
+    color: white;
+  }
+
+  .ba-label.after {
+    background: rgba(40, 180, 80, 0.9);
+    color: white;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    cursor: pointer;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border: 2px solid var(--border);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    color: var(--gray);
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.3s;
+  }
+
+  .lightbox-close:hover {
+    color: var(--orange);
+  }
+
+  /* ===== WORK SAMPLES ===== */
+  .samples {
+    padding: 6rem 2rem;
+    position: relative;
+    border-top: 1px solid var(--border);
+  }
+
+  .samples h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+  }
+
+  .samples-intro {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .samples-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .sample-card {
+    border: 1px solid var(--border);
+    background: var(--navy-light);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+
+  .sample-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-2px);
+  }
+
+  .sample-icon {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--navy);
+    background: var(--orange);
+    padding: 0.15rem 0.5rem;
+    display: inline-block;
+    width: fit-content;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+
+  .sample-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--white);
+    letter-spacing: 0.03em;
+  }
+
+  .sample-card p {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--gray);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .sample-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--orange);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+    margin-top: 0.5rem;
+  }
+
+  .sample-download:hover {
+    color: var(--gold);
+  }
+
+  .sample-download::after {
+    content: '↓';
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .before-after-pair {
+      grid-template-columns: 1fr;
+    }
+    .photo-grid {
+      grid-template-columns: 1fr;
+    }
+    .samples-grid {
+      grid-template-columns: 1fr;
+    }
+    .case-study {
+      padding: 1.5rem 1rem 1.5rem 1.5rem;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -854,8 +1149,9 @@
   <a href="#" class="nav-logo"><img src="data:image/png;base64,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" alt="Outcome" style="height:28px;width:28px;vertical-align:middle;margin-right:8px;">OUTCOME<span>.</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#results">Results</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#method">Method</a></li>
-    <li><a href="portfolio.html">Work</a></li>
+    <li><a href="#samples">Samples</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -932,6 +1228,89 @@
       <div class="result-metric">Restored</div>
       <div class="result-detail">Bluegrass Living. Years of losses reversed. Machine running in 3 weeks after 8 years down.</div>
       <div class="result-time">3 months</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <span class="section-tag">PORTFOLIO</span>
+  <div class="section-label">// Real work. Not renderings.</div>
+  <h2>FROM THE FLOOR</h2>
+
+  <!-- Case Study: Bluegrass Living -->
+  <div class="case-study">
+    <div class="case-header">
+      <h3>Bluegrass Living</h3>
+      <span class="case-result">Years of losses → Break-even in 3 months</span>
+    </div>
+    <p class="case-desc">Building products manufacturer. No standard work, no flow, no visual management. Assembly chaos with parts in cardboard boxes on the floor. Restarted a machine that had been down 8 years. Designed aluminum extrusion workstations with organized parts presentation and ergonomic tooling.</p>
+    <div class="before-after-pair">
+      <div class="photo-card" onclick="openLightbox(this)">
+        <span class="ba-label before">Before</span>
+        <img src="img/bluegrass-before.jpg" alt="Bluegrass Living assembly area before - cluttered workbenches, parts in cardboard boxes on floor, no organization">
+        <div class="photo-caption"><strong>Assembly area.</strong> Parts in cardboard on the floor. No flow. No standard work. No visual management.</div>
+      </div>
+      <div class="photo-card" onclick="openLightbox(this)">
+        <span class="ba-label after">After</span>
+        <img src="img/bluegrass-after.jpg" alt="Bluegrass Living workstation after - organized aluminum extrusion workstation with labeled blue bins and spring balancers">
+        <div class="photo-caption"><strong>Same area.</strong> Aluminum extrusion workstation. Labeled bins. Spring balancers. Every part has a home.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Study: Tubular Steel -->
+  <div class="case-study">
+    <div class="case-header">
+      <h3>Tubular Steel USA</h3>
+      <span class="case-result">4% → 93.9% OEE in 15 months</span>
+    </div>
+    <p class="case-desc">Family-owned steel tube manufacturer. First outside operator in company history. Built OEE monitoring, jidoka culture, and a custom $39K inline inspection system (74% below industry standard). Hired and developed the quality manager and maintenance manager from scratch.</p>
+
+    <div class="photo-grid">
+      <div class="photo-card" onclick="openLightbox(this)">
+        <img src="img/vorne-down.jpg" alt="Vorne XL HD display showing DOWN state - red screen, 0 actual output, 5+ hours downtime">
+        <div class="photo-caption"><strong>Vorne XL HD — DOWN.</strong> Red screen. 0 actual. 5:29 downtime. 19,781 target. This is what the truth looks like when you first turn the lights on.</div>
+      </div>
+      <div class="photo-card" onclick="openLightbox(this)">
+        <img src="img/vorne-running.jpg" alt="Vorne XL HD display showing RUNNING state - green, 4856 actual, 103.8% efficiency">
+        <div class="photo-caption"><strong>Vorne XL HD — RUNNING.</strong> Toyota Tube 16. 4,856 actual. 103.8% efficiency. 95.8% availability. 97.2% quality. Same plant.</div>
+      </div>
+      <div class="photo-card" onclick="openLightbox(this)">
+        <img src="img/vorne-dashboard.jpg" alt="Vorne andon dashboard showing plant-wide OEE monitoring across 5 machines">
+        <div class="photo-caption"><strong>Plant-wide andon.</strong> All machines at a glance. RS 40 Mill, BEWO Saw, Haven 2–4. Running Toyo Seat USA parts. Real-time visibility.</div>
+      </div>
+      <div class="photo-card" onclick="openLightbox(this)">
+        <img src="img/inline-inspection.jpg" alt="Custom inline coil inspection system with Keyence laser sensors on tube forming press">
+        <div class="photo-caption"><strong>Custom inline inspection.</strong> Keyence laser sensors measuring coil thickness & width at 300m/min. My concept, $39K build vs $150K off-the-shelf. Jidoka — catch it at the source.</div>
+      </div>
+      <div class="photo-card" onclick="openLightbox(this)">
+        <img src="img/stop-call-wait.jpg" alt="Stop-Call-Wait quality sign - Ensure Quality! Stop when you see a defect, Call for support, Wait before proceeding">
+        <div class="photo-caption"><strong>Stop–Call–Wait.</strong> I created this at a plant that had never had quality culture. STOP when you see a defect. CALL for support. WAIT before proceeding. Pure TPS.</div>
+      </div>
+      <div class="photo-card" onclick="openLightbox(this)">
+        <img src="img/tubular-team.jpg" alt="David Jones with Tubular Steel team members on the factory floor">
+        <div class="photo-caption"><strong>The team I built.</strong> Royce (green, quality manager I hired). Chase (yellow, maintenance manager — came in as a TCAT student in 2016, now runs maintenance).</div>
+      </div>
+      <div class="photo-card" onclick="openLightbox(this)">
+        <img src="img/senator-hagerty.jpg" alt="US Senator Bill Hagerty examining steel tube product during facility visit">
+        <div class="photo-caption"><strong>Senator Bill Hagerty visits.</strong> Showing him the product. When a U.S. Senator tours your plant, you're doing something right.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toyota Japan -->
+  <div class="case-study">
+    <div class="case-header">
+      <h3>Toyota Motor Corporation — Japan</h3>
+      <span class="case-result">11 years. 4 plants. The source.</span>
+    </div>
+    <p class="case-desc">Vehicle production engineering across Tsutsumi, Motomachi, Tahara, and Kyushu plants. This is where I learned the system — not from a book, not from a seminar, from the people who built it.</p>
+    <div class="photo-grid" style="grid-template-columns: 1fr;">
+      <div class="photo-card" onclick="openLightbox(this)">
+        <img src="img/toyota-human-machine.jpg" alt="Toyota human-machine chart with colored magnets showing work element allocation in Japanese" style="height: 300px;">
+        <div class="photo-caption"><strong>人機能配置表 — Human-machine allocation chart.</strong> Color-coded work elements mapping human and machine cycle time. All in Japanese. This is how Toyota actually designs production lines. I read it, I write it, I teach it.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1059,6 +1438,52 @@
   </div>
 </section>
 
+<!-- WORK SAMPLES -->
+<section class="samples" id="samples">
+  <span class="section-tag">WORK SAMPLES</span>
+  <div class="section-label">// Real deliverables from real engagements</div>
+  <h2>SEE THE WORK</h2>
+  <p class="samples-intro">These are actual frameworks and methodologies I use on the floor. Download them. If you understand what you're looking at, we should talk.</p>
+  <div class="samples-grid">
+    <div class="sample-card">
+      <span class="sample-icon">PPTX</span>
+      <h3>TPS Case Study</h3>
+      <p>Real transformation documented. The gap, the method, the result. How I apply the Toyota Production System to non-Toyota facilities.</p>
+      <a href="downloads/Outcome_TPS_Case_Study.pptx" class="sample-download" download>Download</a>
+    </div>
+    <div class="sample-card">
+      <span class="sample-icon">PPTX</span>
+      <h3>TPS Diagnostic Toolkit</h3>
+      <p>The assessment framework I use in the first 2 weeks. OEE, FTQ, takt time, throughput. How I find the gap before I close it.</p>
+      <a href="downloads/Outcome_TPS_Diagnostic_Toolkit.pptx" class="sample-download" download>Download</a>
+    </div>
+    <div class="sample-card">
+      <span class="sample-icon">PPTX</span>
+      <h3>Factory Planning Methodology</h3>
+      <p>How to design a factory from ideal condition backward. Material flow, equipment layout, human-machine allocation. The Toyota way.</p>
+      <a href="downloads/Outcome_Factory_Planning_Methodology.pptx" class="sample-download" download>Download</a>
+    </div>
+    <div class="sample-card">
+      <span class="sample-icon">PPTX</span>
+      <h3>Mix-Model Production Systems</h3>
+      <p>Running multiple products on one line without changeover chaos. Sequencing, leveling, and heijunka in practice.</p>
+      <a href="downloads/Outcome_Mix_Model_Production_Systems.pptx" class="sample-download" download>Download</a>
+    </div>
+    <div class="sample-card">
+      <span class="sample-icon">PPTX</span>
+      <h3>EV Assembly Line Design</h3>
+      <p>Purpose-built EV production design. Battery pack integration, mixed-model flexibility, automation strategy.</p>
+      <a href="downloads/Outcome_EV_Assembly_Line_Design.pptx" class="sample-download" download>Download</a>
+    </div>
+    <div class="sample-card">
+      <span class="sample-icon">PPTX</span>
+      <h3>Call Self-Stop System</h3>
+      <p>Jidoka implementation. How to build a culture where operators stop the line for quality — and management supports it instead of punishing it.</p>
+      <a href="downloads/Outcome_Call_Self_Stop_System.pptx" class="sample-download" download>Download</a>
+    </div>
+  </div>
+</section>
+
 <!-- DEAL -->
 <section class="deal">
   <span class="section-tag">ENGAGEMENT</span>
@@ -1148,13 +1573,30 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.result-card, .method-step, .phil-block, .deal-item, .who-item, .career-item, .contact-item, .industry-tag').forEach(el => {
+  document.querySelectorAll('.result-card, .method-step, .phil-block, .deal-item, .who-item, .career-item, .contact-item, .case-study, .photo-card, .sample-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
   });
-</script>
 
+  // Lightbox
+  function openLightbox(card) {
+    const img = card.querySelector('img');
+    if (!img) return;
+    let lb = document.getElementById('lightbox');
+    if (!lb) {
+      lb = document.createElement('div');
+      lb.id = 'lightbox';
+      lb.className = 'lightbox';
+      lb.innerHTML = '<button class="lightbox-close">&times;</button><img>';
+      lb.addEventListener('click', () => lb.classList.remove('active'));
+      document.body.appendChild(lb);
+    }
+    lb.querySelector('img').src = img.src;
+    lb.querySelector('img').alt = img.alt;
+    lb.classList.add('active');
+  }
+</script>
 </body>
 </html>
