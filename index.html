@@ -1032,99 +1032,6 @@
     color: var(--orange);
   }
 
-  /* ===== WORK SAMPLES ===== */
-  .samples {
-    padding: 6rem 2rem;
-    position: relative;
-    border-top: 1px solid var(--border);
-  }
-
-  .samples h2 {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    letter-spacing: 0.04em;
-    margin-bottom: 1rem;
-  }
-
-  .samples-intro {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--gray);
-    margin-bottom: 2.5rem;
-    max-width: 600px;
-    line-height: 1.7;
-  }
-
-  .samples-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  .sample-card {
-    border: 1px solid var(--border);
-    background: var(--navy-light);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: border-color 0.3s, transform 0.2s;
-  }
-
-  .sample-card:hover {
-    border-color: var(--orange);
-    transform: translateY(-2px);
-  }
-
-  .sample-icon {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    color: var(--navy);
-    background: var(--orange);
-    padding: 0.15rem 0.5rem;
-    display: inline-block;
-    width: fit-content;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-  }
-
-  .sample-card h3 {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--white);
-    letter-spacing: 0.03em;
-  }
-
-  .sample-card p {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--gray);
-    line-height: 1.6;
-    flex: 1;
-  }
-
-  .sample-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--orange);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: color 0.3s;
-    margin-top: 0.5rem;
-  }
-
-  .sample-download:hover {
-    color: var(--gold);
-  }
-
-  .sample-download::after {
-    content: '↓';
-    font-size: 0.9rem;
-  }
-
   @media (max-width: 768px) {
     .before-after-pair {
       grid-template-columns: 1fr;
@@ -1132,12 +1039,95 @@
     .photo-grid {
       grid-template-columns: 1fr;
     }
-    .samples-grid {
-      grid-template-columns: 1fr;
-    }
     .case-study {
       padding: 1.5rem 1rem 1.5rem 1.5rem;
     }
+  }
+
+  /* ===== JAPAN BRIDGE ===== */
+  .bridge {
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+  .bridge h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+  }
+  .bridge-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    align-items: start;
+  }
+  .bridge-lead p {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--gray-light);
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+    max-width: 620px;
+  }
+  .bridge-lead strong { color: var(--white); font-weight: 600; }
+  .bridge-now {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--orange);
+    background: var(--navy-light);
+    padding: 1.75rem;
+  }
+  .bridge-now-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--orange);
+    margin-bottom: 0.75rem;
+  }
+  .bridge-now h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--white);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+  }
+  .bridge-now-sub {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--gold);
+    margin: 0.35rem 0 1.1rem;
+  }
+  .bridge-now p {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+  .bridge-caps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .bridge-cap {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--gray-light);
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    padding-top: 0.85rem;
+  }
+  .bridge-cap span {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--orange);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+  }
+  @media (max-width: 768px) {
+    .bridge-grid { grid-template-columns: 1fr; }
+    .bridge-caps { grid-template-columns: 1fr; }
   }
 
 </style>
@@ -1151,8 +1141,8 @@
     <li><a href="#results">Results</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#method">Method</a></li>
-    <li><a href="#samples">Samples</a></li>
     <li><a href="#about">About</a></li>
+    <li data-golive="2026-07-01" hidden><a href="#bridge">Japan Bridge</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#" class="nav-phone" id="navPhone"></a>
@@ -1437,49 +1427,27 @@
   </div>
 </section>
 
-<!-- WORK SAMPLES -->
-<section class="samples" id="samples">
-  <span class="section-tag">WORK SAMPLES</span>
-  <div class="section-label">// Real deliverables from real engagements</div>
-  <h2>SEE THE WORK</h2>
-  <p class="samples-intro">These are actual frameworks and methodologies I use on the floor. Download them. If you understand what you're looking at, we should talk.</p>
-  <div class="samples-grid">
-    <div class="sample-card">
-      <span class="sample-icon">PPTX</span>
-      <h3>TPS Case Study</h3>
-      <p>Real transformation documented. The gap, the method, the result. How I apply the Toyota Production System to non-Toyota facilities.</p>
-      <a href="downloads/Outcome_TPS_Case_Study.pptx" class="sample-download" download>Download</a>
+<!-- JAPAN BRIDGE  [STAGED: hidden via data-golive; auto-reveals 2026-07-01] -->
+<section class="bridge" id="bridge" hidden data-golive="2026-07-01">
+  <span class="section-tag">JAPAN ↔ US</span>
+  <div class="section-label">// Bringing Japanese manufacturers into America — without the system getting lost in translation</div>
+  <h2>THE BRIDGE</h2>
+  <div class="bridge-grid">
+    <div class="bridge-lead">
+      <p>Japanese manufacturers entering the US rarely fail on the technology. They fail on the <strong>operating culture</strong> — how decisions get made, how quality is defended, how the floor is run. That gap doesn't translate cleanly across the Pacific.</p>
+      <p>I've spent <strong>16 years on the Asia side of that gap</strong> — 14 in Japan, permanent resident, business-level Japanese — and 30 years building factories on both shores. I don't translate the words. I translate the <strong>system</strong>.</p>
     </div>
-    <div class="sample-card">
-      <span class="sample-icon">PPTX</span>
-      <h3>TPS Diagnostic Toolkit</h3>
-      <p>The assessment framework I use in the first 2 weeks. OEE, FTQ, takt time, throughput. How I find the gap before I close it.</p>
-      <a href="downloads/Outcome_TPS_Diagnostic_Toolkit.pptx" class="sample-download" download>Download</a>
+    <div class="bridge-now">
+      <div class="bridge-now-tag">CURRENTLY</div>
+      <h3>Head of US Business Development</h3>
+      <p class="bridge-now-sub">a Japanese wireless-power (WPT) startup</p>
+      <p>Leading US market entry for an early-stage Japanese technology company — go-to-market strategy, OEM and logistics-partner targeting, and TPS-grade operational rigor brought to a scaling hardware business.</p>
     </div>
-    <div class="sample-card">
-      <span class="sample-icon">PPTX</span>
-      <h3>Factory Planning Methodology</h3>
-      <p>How to design a factory from ideal condition backward. Material flow, equipment layout, human-machine allocation. The Toyota way.</p>
-      <a href="downloads/Outcome_Factory_Planning_Methodology.pptx" class="sample-download" download>Download</a>
-    </div>
-    <div class="sample-card">
-      <span class="sample-icon">PPTX</span>
-      <h3>Mix-Model Production Systems</h3>
-      <p>Running multiple products on one line without changeover chaos. Sequencing, leveling, and heijunka in practice.</p>
-      <a href="downloads/Outcome_Mix_Model_Production_Systems.pptx" class="sample-download" download>Download</a>
-    </div>
-    <div class="sample-card">
-      <span class="sample-icon">PPTX</span>
-      <h3>EV Assembly Line Design</h3>
-      <p>Purpose-built EV production design. Battery pack integration, mixed-model flexibility, automation strategy.</p>
-      <a href="downloads/Outcome_EV_Assembly_Line_Design.pptx" class="sample-download" download>Download</a>
-    </div>
-    <div class="sample-card">
-      <span class="sample-icon">PPTX</span>
-      <h3>Call Self-Stop System</h3>
-      <p>Jidoka implementation. How to build a culture where operators stop the line for quality — and management supports it instead of punishing it.</p>
-      <a href="downloads/Outcome_Call_Self_Stop_System.pptx" class="sample-download" download>Download</a>
-    </div>
+  </div>
+  <div class="bridge-caps">
+    <div class="bridge-cap"><span>01</span>US market-entry strategy &amp; go-to-market for Japanese manufacturers</div>
+    <div class="bridge-cap"><span>02</span>OEM &amp; supplier relationships built in both languages, both cultures</div>
+    <div class="bridge-cap"><span>03</span>Localizing the production system — not just the org chart</div>
   </div>
 </section>
 
@@ -1583,7 +1551,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.result-card, .method-step, .phil-block, .deal-item, .who-item, .career-item, .contact-item, .case-study, .photo-card, .sample-card').forEach(el => {
+  document.querySelectorAll('.result-card, .method-step, .phil-block, .deal-item, .who-item, .career-item, .contact-item, .case-study, .photo-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -1594,4 +1562,30 @@
   function openLightbox(card) {
     const img = card.querySelector('img');
     if (!img) return;
-    let lb = document.getElement
+    let lb = document.getElementById('lightbox');
+    if (!lb) {
+      lb = document.createElement('div');
+      lb.id = 'lightbox';
+      lb.className = 'lightbox';
+      lb.innerHTML = '<button class="lightbox-close" aria-label="Close">✕</button><img alt="">';
+      document.body.appendChild(lb);
+      var close = function () { lb.classList.remove('active'); };
+      lb.addEventListener('click', close);
+      lb.querySelector('.lightbox-close').addEventListener('click', close);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    }
+    var lbImg = lb.querySelector('img');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || '';
+    lb.classList.add('active');
+  }
+
+  // Staged-section gate: reveals [data-golive] elements on/after their date (client-local).
+  // To publish permanently: delete this block AND remove the `hidden` + `data-golive` attrs.
+  document.querySelectorAll('[data-golive]').forEach(function (el) {
+    if (new Date() >= new Date(el.dataset.golive + 'T00:00:00')) el.removeAttribute('hidden');
+  });
+</script>
+</body>
+</html>
+
